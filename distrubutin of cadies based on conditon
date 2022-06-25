@@ -31,5 +31,5 @@ sum=arr1[k]+sum;
     System.out.println("total sum "+sum);
     sc.close();
   
-}
+} 
 }
