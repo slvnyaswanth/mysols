@@ -1,0 +1,35 @@
+import java.util.*;
+public class l51
+{
+    public static void main(String[] args) { 
+        Scanner sc= new Scanner (System.in);
+        int n=sc.nextInt();
+        int arr[]= new int [n];
+        for(int i=0;i<n;i++)
+        arr[i]=sc.nextInt();  
+      int arr1[] = new int [n];
+       Arrays.fill(arr1,1);  
+       for(int k=0;k<n;k++)
+       System.out.print(arr1[k]+" ");  
+        for(int i=0;i<n;i++ ){
+            if(i!=n-1){
+            if(arr[i]>arr[i+1]){
+            arr1[i]=arr1[i+1]+arr1[i]; 
+            System.out.println("after excahnge"+arr1[i]);} }                                                
+            if(i!=0){
+if(arr[i]>arr[i-1]){
+    
+arr1[i]=arr1[i-1]+arr1[i];
+System.out.println("after excahnge"+arr1[i]);}
+            }       
+    }int sum=0;
+    System.out.println("Distrubuted candies");
+    for(int k=0;k<n;k++){
+sum=arr1[k]+sum;
+    System.out.print(arr1[k]+" ");
+}
+    System.out.println("total sum "+sum);
+    sc.close();
+  
+}
+}
