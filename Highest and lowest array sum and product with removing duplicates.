@@ -1,0 +1,72 @@
+
+import java.util.*;
+class Main{
+public static void cal(int arr[], int n,int m){  
+        int[] temp = new int[n];  
+        int j = 0;  
+            Arrays.sort(arr);
+        for (int i=0; i<n-1; i++){  
+            if (arr[i] != arr[i+1]){  
+                temp[j++] = arr[i];  
+            }  
+         }  
+        temp[j++] = arr[n-1];       
+        for (int i=0; i<j; i++){  
+            arr[i] = temp[i];           
+        }        
+    int k=0;
+    for (int i=0; i<j; i++){  
+         
+            if (arr[i] < 0){  
+                k++;
+            }  }          
+int sum=0;
+    System.out.println("maximum sum :");
+    
+    for(int f=0,i=j-1;f<m;i--,f++)
+    sum=sum+temp[i];  
+    System.out.println(sum+" ");
+    sum=0;
+    System.out.println("min sum :");
+    for(int o=0;o<m;o++)
+    sum=sum+arr[o];
+    System.out.println(sum+" ");
+    sum=1;
+    System.out.println("max product :");
+    for(int v=j-1,q=0;q<m;v--,q++){
+    sum=sum*arr[v]; 
+    }
+    System.out.println(sum+" ");
+    sum=1;
+    System.out.println("min product");
+    if(k%2!=0){
+        for(int a=j-1,q=0;q<m-1;a--,q++){   
+            sum=sum*temp[a]; 
+      }
+      sum=sum*temp[0];    
+    }   
+    else{
+        for(int b=0;b<m;b++){
+          
+            sum=sum*arr[b];
+    }}   
+    System.out.println(sum+" ");
+}
+      public static void main (String[] args) {  
+          Scanner sc= new Scanner(System.in);
+          System.out.println("enter the size of number");
+          int n=sc.nextInt();
+System.out.println("enter number of elements u consider");
+          int m=sc.nextInt();
+          System.out.println("enter the elements");
+        int arr[] = new int[n];
+        for(int i=0;i<n;i++)
+        arr[i]=sc.nextInt();
+        cal(arr,n,m);              
+       sc.close();
+    }  
+}  
+    
+    
+    
+    
